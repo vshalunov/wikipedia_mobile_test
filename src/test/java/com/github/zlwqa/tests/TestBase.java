@@ -1,6 +1,7 @@
 package com.github.zlwqa.tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.github.zlwqa.drivers.BrowserstackMobileDriver;
 import com.github.zlwqa.helpers.Attach;
@@ -28,7 +29,7 @@ public class TestBase {
     @BeforeEach
     public void startDriver() {
         step("Открыть браузер", () -> {
-            open();
+            Selenide.open();
         });
     }
 
@@ -39,7 +40,7 @@ public class TestBase {
         Attach.pageSource();
 
         step("Закрыть браузер", () -> {
-            closeWebDriver();
+            Selenide.closeWebDriver();
         });
 
         Attach.attachVideo(sessionId);
