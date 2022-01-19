@@ -3,7 +3,7 @@ package com.github.zlwqa.config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({"classpath:androidMobile.properties"})
+@Config.Sources({"classpath:config/androidMobile.properties"})
 public interface MobileConfig extends Config {
 
     @Key("userName")

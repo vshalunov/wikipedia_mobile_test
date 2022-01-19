@@ -44,6 +44,10 @@ public class AndroidTests extends TestBase {
             $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Navalny");
         });
 
+        step("Нажать на результат поиска с заголовком 'Alexei Navalny'", () -> {
+            $$(byClassName("android.widget.TextView")).find(text("Alexei Navalny")).click();
+        });
+
         step("Отображение страницы про Алексея Навального ", () -> {
             $(MobileBy.id("org.wikipedia.alpha:id/view_page_title_text")).shouldHave(text("Alexei Navalny"));
         });
