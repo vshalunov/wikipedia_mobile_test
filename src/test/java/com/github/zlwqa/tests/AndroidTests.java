@@ -16,7 +16,7 @@ import static io.qameta.allure.Allure.step;
 public class AndroidTests extends TestBase {
 
     @Test
-    @DisplayName("Поиск в приложении Wikipedia")
+    @DisplayName("Отображение результатов поиска в приложении Wikipedia")
     void searchTest() {
 
         step("Открыть строку поиска", () -> {
@@ -33,18 +33,18 @@ public class AndroidTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Поиск в приложении Wikipedia")
-    void searchTest1() {
+    @DisplayName("Отображение страницы про Алексея Навального в приложении Wikipedia")
+    void searchPageNavalnyTest() {
 
         step("Открыть строку поиска", () -> {
             $(MobileBy.AccessibilityId("Search Wikipedia")).click();
         });
 
-        step("Ввести поисковое значение", () -> {
+        step("Ввести поисковое значение Navalny", () -> {
             $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Navalny");
         });
 
-        step("Отображение результатов поиска", () -> {
+        step("Отображение страницы про Алексея Навального ", () -> {
             $(MobileBy.id("org.wikipedia.alpha:id/view_page_title_text")).shouldHave(text("Alexei Navalny"));
         });
     }
