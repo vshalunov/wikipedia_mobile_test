@@ -34,7 +34,7 @@
 >
 > <code>Allure Report</code> формирует отчет о запуске тестов
 >
-> Автотесты интегрируются с тест-менеджмент системой <code>Allure TestOps</code> и таск-трекер системой <code>Jira</code>
+> Автотесты интегрируются с тест-менеджмент системой <code>Allure TestOps</code>
 
 ## <img width="4%" title="Jira" src="images/logo/ITerm2_v3_icon.png"> Запуск тестов из терминала
 
