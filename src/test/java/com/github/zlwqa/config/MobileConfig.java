@@ -14,4 +14,12 @@ public interface MobileConfig extends Config {
 
     @Key("appUrl")
     String appUrl();
+
+    @Key("device")
+    @DefaultValue("Google Pixel 3")
+    String device();
+
+    @Key("osVersion")
+    @DefaultValue("(9.0)")
+    String osVersion();
 }

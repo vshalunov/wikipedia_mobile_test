@@ -17,6 +17,8 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
     private static final String userName = mobileConfig.userName();
     private static final String accessKey = mobileConfig.accessKey();
     private static final String appUrl = mobileConfig.appUrl();
+    private static final String device = mobileConfig.device();
+    private static final String osVersion = mobileConfig.osVersion();
 
     public static URL getBrowserstackUrl() {
         try {
@@ -37,11 +39,9 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("app", appUrl);
 
         // Specify device and os_version for testing
-/*        desiredCapabilities.setCapability("device", "Samsung Galaxy S9");
-        desiredCapabilities.setCapability("os_version", "8.0");*/
 
-        desiredCapabilities.setCapability("device", "Google Pixel 3");
-        desiredCapabilities.setCapability("os_version", "9.0");
+        desiredCapabilities.setCapability("device", device);
+        desiredCapabilities.setCapability("os_version", osVersion);
 
         // Set other BrowserStack capabilities
         desiredCapabilities.setCapability("project", "First Java Project");
