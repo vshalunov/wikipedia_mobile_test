@@ -157,7 +157,7 @@ allure serve build/allure-results
 
 </details>
 
-## <img width="4%" title="Selenoid" src="images/logo/BrowserStack.svg"> Пример запуска теста в Browserstack
+## <img width="4%" title="BrowserStack" src="images/logo/BrowserStack.svg"> Пример запуска теста в Browserstack
 
 <details>
 <summary>Подробнее</summary>
