@@ -157,7 +157,7 @@ allure serve build/allure-results
 
 </details>
 
-## <img width="4%" title="BrowserStack" src="images/logo/BrowserStack.svg"> Пример запуска теста в Browserstack
+## <img width="4%" title="Browserstack" src="images/logo/Browserstack.svg"> Пример запуска теста в Browserstack
 
 <details>
 <summary>Подробнее</summary>
@@ -165,7 +165,7 @@ allure serve build/allure-results
 > Для каждого теста записывается и прилагается видео прогона.
 
 <p align="center">
-  <img title="BrowserStack Video" src="images/gif/wikipedia_video.gif">
+  <img title="Browserstack Video" src="images/gif/wikipedia_video.gif">
 </p>
 
 </details>
