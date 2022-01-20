@@ -124,7 +124,7 @@ allure serve build/allure-results
 
 </details>
 
-## <img width="4%" title="Allure TestOps" src="images/logo/Allure_TestOps.svg"> Интеграция тестов c тест-менеджмент системой [Allure TestOps](https://allure.autotests.cloud/project/790/dashboards)
+## <img width="4%" title="Allure TestOps" src="images/logo/Allure_TestOps.svg"> Интеграция тестов c тест-менеджмент системой [Allure TestOps](https://allure.autotests.cloud/project/907/dashboards)
 
 <details>
 <summary>Подробнее</summary>
