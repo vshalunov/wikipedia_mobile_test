@@ -20,6 +20,6 @@ public interface MobileConfig extends Config {
     String device();
 
     @Key("osVersion")
-    @DefaultValue("(9.0)")
+    @DefaultValue("9.0")
     String osVersion();
 }
