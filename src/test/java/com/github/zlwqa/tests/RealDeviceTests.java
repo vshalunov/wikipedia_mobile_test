@@ -19,6 +19,41 @@ public class RealDeviceTests extends TestBase {
     @DisplayName("Отображение результатов поиска в приложении Wikipedia")
     void searchTest() {
 
+        step("первый экран", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"))
+                    .shouldHave(text("The Free Encyclopedia …in over 300 languages"));
+        });
+
+        step("далее", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+        });
+
+        step("второй экран", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(text("New ways to explore"));
+        });
+
+        step("далее", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+        });
+
+        step("третий экран", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"))
+                    .shouldHave(text("Reading lists with sync"));
+        });
+
+        step("далее", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+        });
+
+        step("четвертый экран", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"))
+                    .shouldHave(text("Send anonymous data"));
+        });
+
+        step("готово", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_done_button")).click();
+        });
+
         step("Открыть строку поиска", () -> {
             $(MobileBy.AccessibilityId("Search Wikipedia")).click();
         });
@@ -36,6 +71,41 @@ public class RealDeviceTests extends TestBase {
     @DisplayName("Отображение страницы про Алексея Навального в приложении Wikipedia")
     void searchPageNavalnyTest() {
 
+        step("первый экран", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"))
+                    .shouldHave(text("The Free Encyclopedia …in over 300 languages"));
+        });
+
+        step("далее", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+        });
+
+        step("второй экран", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(text("New ways to explore"));
+        });
+
+        step("далее", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+        });
+
+        step("третий экран", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"))
+                    .shouldHave(text("Reading lists with sync"));
+        });
+
+        step("далее", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+        });
+
+        step("четвертый экран", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"))
+                    .shouldHave(text("Send anonymous data"));
+        });
+
+        step("готово", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_done_button")).click();
+        });
+
         step("Открыть строку поиска", () -> {
             $(MobileBy.AccessibilityId("Search Wikipedia")).click();
         });
@@ -49,7 +119,7 @@ public class RealDeviceTests extends TestBase {
         });
 
         step("Отображение страницы про Алексея Навального ", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/view_page_title_text")).shouldHave(text("Alexei Navalny"));
+            $(byClassName("android.view.View")).shouldHave(text("Alexei Navalny"));
         });
     }
 }
