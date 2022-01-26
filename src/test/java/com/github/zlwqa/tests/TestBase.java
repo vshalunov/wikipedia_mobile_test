@@ -39,7 +39,7 @@ public class TestBase {
                 break;
             default:
                 System.out.println("Необходимо запустить со следующим параметром " +
-                        "-DeviceHost=browserstack/selenoid/local/real");
+                        "-DdeviceHost=browserstack/selenoid/local/real");
         }
 
         Configuration.startMaximized = false;
