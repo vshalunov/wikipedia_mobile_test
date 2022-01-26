@@ -56,3 +56,27 @@ tasks.withType(Test) {
         }
     }
 }
+
+task browserstack (type: Test) {
+    useJUnitPlatform {
+        includeTags 'browserstack'
+    }
+}
+
+task local(type: Test) {
+    useJUnitPlatform {
+        includeTags 'local'
+    }
+}
+
+task real(type: Test) {
+    useJUnitPlatform {
+        includeTags 'real'
+    }
+}
+
+task selenoid(type: Test) {
+    useJUnitPlatform {
+        includeTags 'selenoid'
+    }
+}

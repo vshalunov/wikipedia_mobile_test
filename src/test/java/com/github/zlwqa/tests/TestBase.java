@@ -24,7 +24,6 @@ public class TestBase {
     public static void setup() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-
         switch (deviceHost) {
             case "browserstack":
                 Configuration.browser = BrowserstackMobileDriver.class.getName();
