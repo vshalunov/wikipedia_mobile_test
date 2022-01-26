@@ -58,24 +58,29 @@ tasks.withType(Test) {
 }
 
 task browserstack (type: Test) {
+    //systemProperty("deviceHost", System.getProperty("deviceHost", "browserstack"))
+    systemProperty("deviceHost","browserstack")
     useJUnitPlatform {
         includeTags 'browserstack'
     }
 }
 
 task local(type: Test) {
+    systemProperty("deviceHost","local")
     useJUnitPlatform {
         includeTags 'local'
     }
 }
 
 task real(type: Test) {
+    systemProperty("deviceHost","real")
     useJUnitPlatform {
         includeTags 'real'
     }
 }
 
 task selenoid(type: Test) {
+    systemProperty("deviceHost","selenoid")
     useJUnitPlatform {
         includeTags 'selenoid'
     }
