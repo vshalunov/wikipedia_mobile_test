@@ -47,7 +47,7 @@ public class SelenoidMobileDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("language", language);
         desiredCapabilities.setCapability("appPackage", appPackage);
         desiredCapabilities.setCapability("appActivity", appActivity);
-        desiredCapabilities.setCapability("app", app);
+        desiredCapabilities.setCapability("app", apkUrl());
 
         desiredCapabilities.setCapability("enableVNC", true);
         desiredCapabilities.setCapability("enableVideo", true);
