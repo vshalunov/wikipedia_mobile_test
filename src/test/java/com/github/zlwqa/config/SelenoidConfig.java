@@ -16,7 +16,7 @@ public interface SelenoidConfig extends Config {
     String password();
 
     @Key("deviceName")
-    @DefaultValue("Pixel_4_API_30")
+    @DefaultValue("android")
     String deviceName();
 
     @Key("platformName")
@@ -24,7 +24,7 @@ public interface SelenoidConfig extends Config {
     String platformName();
 
     @Key("Version")
-    @DefaultValue("11.0")
+    @DefaultValue("8.1")
     String Version();
 
     @Key("locale")
