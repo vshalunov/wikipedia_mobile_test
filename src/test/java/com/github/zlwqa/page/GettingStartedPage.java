@@ -5,6 +5,7 @@ import io.appium.java_client.MobileBy;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class GettingStartedPage {
@@ -21,7 +22,8 @@ public class GettingStartedPage {
             secondScreen = $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView")),
             thirdScreen = $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView")),
             fourthScreen = $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView")),
-            doneButton = $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_done_button"));
+            doneButton = $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_done_button")),
+            searchBar = $(MobileBy.AccessibilityId("Search Wikipedia"));
 
     // Actions
     @Step("Проверить отображение заголовка с текстом 'The Free Encyclopedia …in over 300 languages' на первом экране")
@@ -66,9 +68,9 @@ public class GettingStartedPage {
         return this;
     }
 
-    @Step("Отображение поисковой строки")
+    @Step("Проверить отображение поисковой строки")
     public GettingStartedPage displaySearchBar() {
-        doneButton.click();
+        searchBar.shouldBe(visible);
 
         return this;
     }
