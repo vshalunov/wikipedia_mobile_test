@@ -1,7 +1,7 @@
 package com.github.zlwqa.drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import com.github.zlwqa.config.MobileConfig;
+import com.github.zlwqa.config.BrowserstackConfig;
 import io.appium.java_client.android.AndroidDriver;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
@@ -12,17 +12,18 @@ import java.net.URL;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
-    private static final MobileConfig mobileConfig = ConfigFactory.create(MobileConfig.class, System.getProperties());
+    private static final BrowserstackConfig BROWSERSTACK_CONFIG = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
 
-    private static final String userName = mobileConfig.userName();
-    private static final String accessKey = mobileConfig.accessKey();
-    private static final String appUrl = mobileConfig.appUrl();
-    private static final String device = mobileConfig.device();
-    private static final String osVersion = mobileConfig.osVersion();
+    private static final String userName = BROWSERSTACK_CONFIG.userName();
+    private static final String accessKey = BROWSERSTACK_CONFIG.accessKey();
+    private static final String appUrl = BROWSERSTACK_CONFIG.appUrl();
+    private static final String device = BROWSERSTACK_CONFIG.deviceName();
+    private static final String osVersion = BROWSERSTACK_CONFIG.osVersion();
+    private static final String remoteURL = BROWSERSTACK_CONFIG.remoteURL();
 
     public static URL getBrowserstackUrl() {
         try {
-            return new URL("http://hub.browserstack.com/wd/hub");
+            return new URL(remoteURL);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

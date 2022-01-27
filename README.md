@@ -46,6 +46,7 @@
 ```
 gradle clean test
 ```
+
 > <details>
 > <summary>:exclamation:</summary>
 >
@@ -174,7 +175,6 @@ allure serve build/allure-results
 <summary>:heartbeat: </summary>
 
 ### Спасибо за идею оформления [jjfhj](https://github.com/jjfhj)
-
 
 </details>
 
