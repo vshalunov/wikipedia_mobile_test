@@ -33,7 +33,7 @@
 >
 > <code>Jenkins</code> выполняет запуск тестов
 > 
-> <code>Selenoid</code> выполняет запуск браузеров в контейнерах <code>Docker</code>
+> <code>Selenoid</code> выполняет запуск приложения в контейнерах <code>Docker</code>
 >
 > <code>BrowserStack</code> выполняет запуск приложения на удаленном мобильном устройстве
 >
