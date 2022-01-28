@@ -43,9 +43,9 @@ public interface SelenoidConfig extends Config {
     @DefaultValue("org.wikipedia.main.MainActivity")
     String appActivity();
 
-    @Key("app")
+    @Key("appURL")
     @DefaultValue("https://github.com/wikimedia/apps-android-wikipedia/releases/download/latest/app-alpha-universal-release.apk")
-    String app();
+    String appURL();
 
     @Key("videoStorageURL")
     String videoStorageURL();

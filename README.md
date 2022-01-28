@@ -6,12 +6,15 @@
 
 - :white_check_mark: Отображение результатов поиска в приложении Wikipedia
 - :white_check_mark: Отображение определенной страницы в приложении Wikipedia
-
+- :white_check_mark: Проверка первых четырех экранов Getting Started
+- 
 ## <img width="4%" title="Technologies" src="images/logo/technologies.png"> Технологический стек
 
 <p align="center">
 <img width="6%" title="IntelliJ IDEA" src="images/logo/Intelij_IDEA.svg">
 <img width="6%" title="Java" src="images/logo/Java.svg">
+<img width="6%" title="Selenide" src="images/logo/Selenide.svg">
+<img width="6%" title="Selenoid" src="images/logo/Selenoid.svg">
 <img width="6%" title="Allure Report" src="images/logo/Allure_Report.svg">
 <img width="6%" title="Gradle" src="images/logo/Gradle.svg">
 <img width="6%" title="JUnit5" src="images/logo/JUnit5.svg">
@@ -42,7 +45,7 @@
 <details>
 <summary>Подробнее</summary>
 
-### :rocket: Запуск тестов в [BrowserStack](https://www.browserstack.com/)
+### :rocket: Запуск тестов
 
 ```
 gradle clean ${TASK}
@@ -98,7 +101,7 @@ gradle clean ${TASK}
 > + <code>language</code> – язык приложения (<code>en</code>,<code>ru</code> и т.д.)
 > + <code>appPackage</code> – идентификатор пакета приложения
 > + <code>appActivity</code> – название основной активности приложения
-> + <code>app</code> – путь до тестируемого приложения
+> + <code>appURL</code> – ссылка на тестируемое приложение
 > + <code>selenoidURL</code> – URL удаленного сервера, на котором будут запускаться тесты
 > + <code>videoStorageURL</code> – адрес хранилища видео выполненных тестов
 > </details>
@@ -108,7 +111,7 @@ gradle clean ${TASK}
 ### :rocket: Параметры сборки
 
 > <details>
-> <summary><code>TASK</code> - список тестов, сгруппированных по параметру тега. В зависимости от выбранного параметра будут запускаться определенные группы тестов</summary>
+> <summary><code>TASK</code> - список тестов, сгруппированных по параметру тега. В зависимости от выбранного параметра, будут запускаться определенные группы тестов</summary>
 >
 > + <code>browserstack</code> - запуск тестов с тегом <code>browserstack</code> на платформе <code>BrowserStack</code>
 > + <code>selenoid</code> - запуск тестов с тегом <code>selenoid</code> на удаленном сервере <code>Selenoid</code>

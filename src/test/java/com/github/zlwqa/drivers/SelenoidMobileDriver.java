@@ -23,7 +23,7 @@ public class SelenoidMobileDriver implements WebDriverProvider {
     private static final String language = SELENOID_CONFIG.language();
     private static final String appPackage = SELENOID_CONFIG.appPackage();
     private static final String appActivity = SELENOID_CONFIG.appActivity();
-    private static final String app = SELENOID_CONFIG.app();
+    private static final String appURL = SELENOID_CONFIG.appURL();
     private static final String selenoidURL = SELENOID_CONFIG.selenoidURL();
     private static final String login = SELENOID_CONFIG.login();
     private static final String password = SELENOID_CONFIG.password();
@@ -57,7 +57,7 @@ public class SelenoidMobileDriver implements WebDriverProvider {
 
     private URL apkUrl() {
         try {
-            return new URL(app);
+            return new URL(appURL);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
