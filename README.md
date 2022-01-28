@@ -7,7 +7,6 @@
 - :white_check_mark: Отображение результатов поиска в приложении Wikipedia
 - :white_check_mark: Отображение определенной страницы в приложении Wikipedia
 - :white_check_mark: Проверка первых четырех экранов Getting Started
-- 
 ## <img width="4%" title="Technologies" src="images/logo/technologies.png"> Технологический стек
 
 <p align="center">
