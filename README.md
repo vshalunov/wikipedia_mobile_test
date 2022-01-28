@@ -236,7 +236,7 @@ allure serve build/allure-results
 
 </details>
 
-## <img width="4%" title="Selenoid" src="images/logo/Selenoid.svg"> Пример запуска теста в Browserstack
+## <img width="4%" title="Selenoid" src="images/logo/Selenoid.svg"> Пример запуска теста в Selenoid
 
 <details>
 <summary>Подробнее</summary>
@@ -244,7 +244,7 @@ allure serve build/allure-results
 > Для каждого теста записывается и прилагается видео прогона.
 
 <p align="center">
-  <img title="Browserstack Video" src="images/gif/wikipedia_selenoid.gif">
+  <img title="Selenoid Video" src="images/gif/wikipedia_selenoid.gif">
 </p>
 
 </details>
