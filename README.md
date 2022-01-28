@@ -114,8 +114,8 @@ gradle clean ${TASK}
 >
 > + <code>browserstack</code> - запуск тестов с тегом <code>browserstack</code> на платформе <code>BrowserStack</code>
 > + <code>selenoid</code> - запуск тестов с тегом <code>selenoid</code> на удаленном сервере <code>Selenoid</code>
-> + <code>real</code> - запуск приложения на реальном устройстве при его подключении через <code>USB</code>
-> + <code>local</code> - запуск приложения на локальном эмуляторе мобильного Android-устройства в <code>Android Studio IDE</code>
+> + <code>real</code> - запуск тестов с тегом <code>real</code> на реальном устройстве при его подключении через <code>USB</code>
+> + <code>local</code> - запуск тестов с тегом <code>local</code> на локальном эмуляторе мобильного Android-устройства в <code>Android Studio IDE</code>
 > </details>
 
 </details>
