@@ -17,7 +17,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
     private static final String userName = BROWSERSTACK_CONFIG.userName();
     private static final String accessKey = BROWSERSTACK_CONFIG.accessKey();
     private static final String appUrl = BROWSERSTACK_CONFIG.appUrl();
-    private static final String device = BROWSERSTACK_CONFIG.deviceName();
+    private static final String deviceName = BROWSERSTACK_CONFIG.deviceName();
     private static final String osVersion = BROWSERSTACK_CONFIG.osVersion();
     private static final String remoteURL = BROWSERSTACK_CONFIG.remoteURL();
 
@@ -41,7 +41,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
 
         // Specify device and os_version for testing
 
-        desiredCapabilities.setCapability("device", device);
+        desiredCapabilities.setCapability("device", deviceName);
         desiredCapabilities.setCapability("os_version", osVersion);
 
         // Set other BrowserStack capabilities

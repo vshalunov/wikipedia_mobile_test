@@ -20,9 +20,10 @@
 <img width="6%" title="Allure TestOps" src="images/logo/Allure_TestOps.svg">
 <img width="6%" title="Rest Assured" src="images/logo/Rest-Assured.svg">
 <img width="6%" title="BrowserStack" src="images/logo/Browserstack.svg">
+<img width="6%" title="Appium" src="images/logo/Appium.svg">
 </p>
 
-> В данном проекте автотесты написаны на <code>Java</code> с использованием фреймворка <code>Selenide</code> для UI проверок и библиотеки <code>REST Assured</code> для отображения видео в отчете
+> В данном проекте автотесты написаны на <code>Java</code> с использованием фреймворка <code>Selenide</code> и <code>Appium</code> для UI проверок, и библиотеки <code>REST Assured</code> для отображения видео в отчете
 >
 > <code>JUnit 5</code> используется для модульного тестирования
 >
@@ -44,13 +45,75 @@
 ### :rocket: Запуск тестов в [BrowserStack](https://www.browserstack.com/)
 
 ```
-gradle clean test
+gradle clean ${TASK}
 ```
 
 > <details>
-> <summary>:exclamation:</summary>
+> <summary>:exclamation: Для запуска тестов необходимы файлы, в которых прописаны определенные параметры: </summary>
+> <details>
+> <summary> <code>browserstack.properties</code> </summary>
 >
-> + Для запуска тестов необходим файл <code>androidMobile.properties</code>. В нем должны быть заполнены следующие значения _userName_, _accessKey_  и _appUrl_. _userName_ и _accessKey_ расположены в настройках <code>BrowserStack</code> для <code>App Automate</code>, _appUrl_ - ссылка на тестируемое приложение.
+> + <code>userName</code> и <code>accessKey</code> – расположены в настройках <code>BrowserStack</code> для <code>App Automate</code>
+> + <code>appUrl</code> – ссылка на тестируемое приложение
+> + <code>deviceName</code> – наименование мобильного устройства, на котором будут запускаться тесты
+> + <code>osVersion</code> – версия операционной системы мобильного устройства
+> + <code>remoteURL</code> – URL удаленного сервера, на котором будут запускаться тесты 
+> </details>
+>
+> <details>
+> <summary> <code>local.properties</code> </summary>
+>
+> + <code>deviceName</code> – наименование мобильного устройства, на котором будут запускаться тесты
+> + <code>platformName</code> – имя платформы, на которой будут запускаться тесты
+> + <code>version</code> – версия операционной системы мобильного устройства
+> + <code>locale</code> – локализация приложения (<code>en</code>,<code>ru</code> и т.д.)
+> + <code>language</code> – язык приложения (<code>en</code>,<code>ru</code> и т.д.)
+> + <code>appPackage</code> – идентификатор пакета приложения
+> + <code>appActivity</code> – название основной активности приложения
+> + <code>app</code> – путь до тестируемого приложения
+> + <code>remoteURL</code> – URL удаленного сервера, на котором будут запускаться тесты
+> </details>
+>
+> <details>
+> <summary> <code>realDevice.properties</code> </summary>
+>
+> + <code>deviceName</code> – наименование мобильного устройства, на котором будут запускаться тесты
+> + <code>platformName</code> – имя платформы, на которой будут запускаться тесты
+> + <code>version</code> – версия операционной системы мобильного устройства
+> + <code>locale</code> – локализация приложения (<code>en</code>,<code>ru</code> и т.д.)
+> + <code>language</code> – язык приложения (<code>en</code>,<code>ru</code> и т.д.)
+> + <code>appPackage</code> – идентификатор пакета приложения
+> + <code>appActivity</code> – название основной активности приложения
+> + <code>app</code> – путь до тестируемого приложения
+> + <code>remoteURL</code> – URL удаленного сервера, на котором будут запускаться тесты
+> </details>
+>
+> <details>
+> <summary> <code>selenoid.properties</code> </summary>
+>
+> + <code>deviceName</code> – наименование мобильного устройства, на котором будут запускаться тесты
+> + <code>platformName</code> – имя платформы, на которой будут запускаться тесты
+> + <code>version</code> – версия операционной системы мобильного устройства
+> + <code>locale</code> – локализация приложения (<code>en</code>,<code>ru</code> и т.д.)
+> + <code>language</code> – язык приложения (<code>en</code>,<code>ru</code> и т.д.)
+> + <code>appPackage</code> – идентификатор пакета приложения
+> + <code>appActivity</code> – название основной активности приложения
+> + <code>app</code> – путь до тестируемого приложения
+> + <code>selenoidURL</code> – URL удаленного сервера, на котором будут запускаться тесты
+> + <code>videoStorageURL</code> – адрес хранилища видео выполненных тестов
+> </details>
+>
+> </details>
+
+### :rocket: Параметры сборки
+
+> <details>
+> <summary><code>TASK</code> - список тестов, сгруппированных по параметру тега. В зависимости от выбранного параметра будут запускаться определенные группы тестов</summary>
+>
+> + <code>browserstack</code> - запуск тестов с тегом <code>browserstack</code> на платформе <code>BrowserStack</code>
+> + <code>selenoid</code> - запуск тестов с тегом <code>selenoid</code> на удаленном сервере <code>Selenoid</code>
+> + <code>real</code> - запуск приложения на реальном устройстве при его подключении через <code>USB</code>
+> + <code>local</code> - запуск приложения на локальном эмуляторе мобильного Android-устройства в <code>Android Studio IDE</code>
 > </details>
 
 </details>
@@ -72,15 +135,17 @@ allure serve build/allure-results
 
 </details>
 
-## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/zlw-qa_guru_20/)
+## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/zlwqa-wikipedia_mobile_test/)
 
 <details>
 <summary>Подробнее</summary>
 
 ### :triangular_flag_on_post:     Для запуска тестов в Jenkins необходимо выполнить следующие шаги:
 
-1. Открыть сборку [Jenkins](https://jenkins.autotests.cloud/job/zlw-qa_guru_20/)
+1. Открыть сборку [Jenkins](https://jenkins.autotests.cloud/job/zlwqa-wikipedia_mobile_test/)
 2. Нажать на таск <code>"Собрать с параметрами"</code>
+3. Указать [значения параметров](#rocket-параметры-сборки)
+4. Нажать на кнопку <code>"Собрать"</code>
 
 <p align="center">
 <img title="Jenkins parameters" src="images/screens/jenkins_parameters.png">
@@ -88,7 +153,7 @@ allure serve build/allure-results
 
 ### :triangular_flag_on_post: Для формирования отчета о прохождении тестов в Allure Report необходимо выполнить следующий шаг:
 
-3. После выполнения сборки нажать на любую ссылку/иконку <code>"Allure Report"</code>
+5. После выполнения сборки нажать на любую ссылку/иконку <code>"Allure Report"</code>
 
 <p>
 <img title="Allure Report" src="images/screens/jenkins_allure_report.png">
@@ -96,7 +161,7 @@ allure serve build/allure-results
 
 </details>
 
-## <img width="4%" title="Allure Report" src="images/logo/Allure_Report.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/zlw-qa_guru_20/allure/)
+## <img width="4%" title="Allure Report" src="images/logo/Allure_Report.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/zlwqa-wikipedia_mobile_test/allure/)
 
 <details>
 <summary>Подробнее</summary>
@@ -125,7 +190,7 @@ allure serve build/allure-results
 
 </details>
 
-## <img width="4%" title="Allure TestOps" src="images/logo/Allure_TestOps.svg"> Интеграция тестов c тест-менеджмент системой [Allure TestOps](https://allure.autotests.cloud/project/907/dashboards)
+## <img width="4%" title="Allure TestOps" src="images/logo/Allure_TestOps.svg"> Интеграция тестов c тест-менеджмент системой [Allure TestOps](https://allure.autotests.cloud/project/936/dashboards)
 
 <details>
 <summary>Подробнее</summary>
@@ -167,6 +232,19 @@ allure serve build/allure-results
 
 <p align="center">
   <img title="Browserstack Video" src="images/gif/wikipedia_video.gif">
+</p>
+
+</details>
+
+## <img width="4%" title="Selenoid" src="images/logo/Selenoid.svg"> Пример запуска теста в Browserstack
+
+<details>
+<summary>Подробнее</summary>
+
+> Для каждого теста записывается и прилагается видео прогона.
+
+<p align="center">
+  <img title="Browserstack Video" src="images/gif/wikipedia_selenoid.gif">
 </p>
 
 </details>
