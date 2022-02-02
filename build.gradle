@@ -65,7 +65,7 @@ task browserstack(type: Test) {
 }
 
 task local(type: Test) {
-    systemProperty("deviceHost", "local")
+    //systemProperty("deviceHost", "local")
     useJUnitPlatform {
         includeTags 'local'
     }

@@ -21,5 +21,4 @@ public class SelenoidVideoUrl {
         }
         return null;
     }
-
 }

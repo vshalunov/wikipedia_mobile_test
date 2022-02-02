@@ -17,6 +17,10 @@ public class RunHelper {
     }
 
     public Class<?> getDriverClass() {
+        if (deviceHost == null) {
+            throw new RuntimeException("Необходимо ввести обязательный параметр -DdeviceHost");
+        }
+
         switch (deviceHost) {
             case "browserstack":
                 return BrowserstackMobileDriver.class;
@@ -27,8 +31,8 @@ public class RunHelper {
             case "real":
                 return RealDeviceMobileDriver.class;
             default:
-                throw new RuntimeException("Необходимо запустить со следующим параметром " +
-                        "-DdeviceHost=browserstack/selenoid/local/real");
+                throw new RuntimeException("Параметр -DdeviceHost может принимать только следующие значения: " +
+                        "browserstack/selenoid/local/real");
         }
     }
 }

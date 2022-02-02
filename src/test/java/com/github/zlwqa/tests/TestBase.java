@@ -3,12 +3,7 @@ package com.github.zlwqa.tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import com.github.zlwqa.drivers.BrowserstackMobileDriver;
-import com.github.zlwqa.drivers.LocalMobileDriver;
-import com.github.zlwqa.drivers.RealDeviceMobileDriver;
-import com.github.zlwqa.drivers.SelenoidMobileDriver;
 import com.github.zlwqa.helpers.Attach;
-import com.github.zlwqa.helpers.RunHelper;
 import com.github.zlwqa.page.GettingStartedPage;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -26,24 +21,6 @@ public class TestBase {
     @BeforeAll
     public static void setup() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-
-/*        switch (deviceHost) {
-            case "browserstack":
-                Configuration.browser = BrowserstackMobileDriver.class.getName();
-                break;
-            case "selenoid":
-                Configuration.browser = SelenoidMobileDriver.class.getName();
-                break;
-            case "local":
-                Configuration.browser = LocalMobileDriver.class.getName();
-                break;
-            case "real":
-                Configuration.browser = RealDeviceMobileDriver.class.getName();
-                break;
-            default:
-                throw new RuntimeException("Необходимо запустить со следующим параметром " +
-                        "-DdeviceHost=browserstack/selenoid/local/real");
-        }*/
         Configuration.browser = runHelper().getDriverClass().getName();
         Configuration.startMaximized = false;
         Configuration.browserSize = null;
