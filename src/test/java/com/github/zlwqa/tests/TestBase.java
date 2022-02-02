@@ -8,6 +8,7 @@ import com.github.zlwqa.drivers.LocalMobileDriver;
 import com.github.zlwqa.drivers.RealDeviceMobileDriver;
 import com.github.zlwqa.drivers.SelenoidMobileDriver;
 import com.github.zlwqa.helpers.Attach;
+import com.github.zlwqa.page.GettingStartedPage;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -18,6 +19,7 @@ import static io.qameta.allure.Allure.step;
 
 public class TestBase {
 
+    GettingStartedPage gettingStartedPage = new GettingStartedPage();
     public static String deviceHost = System.getProperty("deviceHost");
 
     @BeforeAll

@@ -16,22 +16,22 @@ public class SelenoidMobileDriver implements WebDriverProvider {
 
     private static final SelenoidConfig SELENOID_CONFIG = ConfigFactory.create(SelenoidConfig.class, System.getProperties());
 
-    private static final String platformName = SELENOID_CONFIG.platformName();
-    private static final String deviceName = SELENOID_CONFIG.deviceName();
-    private static final String Version = SELENOID_CONFIG.Version();
-    private static final String locale = SELENOID_CONFIG.locale();
-    private static final String language = SELENOID_CONFIG.language();
-    private static final String appPackage = SELENOID_CONFIG.appPackage();
-    private static final String appActivity = SELENOID_CONFIG.appActivity();
-    private static final String appURL = SELENOID_CONFIG.appURL();
-    private static final String selenoidURL = SELENOID_CONFIG.selenoidURL();
-    private static final String login = SELENOID_CONFIG.login();
-    private static final String password = SELENOID_CONFIG.password();
-    private static final String remoteURL = format("https://%s:%s@%s", login, password, selenoidURL);
+    private static final String PLATFORM_NAME = SELENOID_CONFIG.platformName();
+    private static final String DEVICE_NAME = SELENOID_CONFIG.deviceName();
+    private static final String VERSION = SELENOID_CONFIG.Version();
+    private static final String LOCALE = SELENOID_CONFIG.locale();
+    private static final String LANGUAGE = SELENOID_CONFIG.language();
+    private static final String APP_PACKAGE = SELENOID_CONFIG.appPackage();
+    private static final String APP_ACTIVITY = SELENOID_CONFIG.appActivity();
+    private static final String APP_URL = SELENOID_CONFIG.appURL();
+    private static final String SELENOID_URL = SELENOID_CONFIG.selenoidURL();
+    private static final String LOGIN = SELENOID_CONFIG.login();
+    private static final String PASSWORD = SELENOID_CONFIG.password();
+    private static final String REMOTE_URL = format("https://%s:%s@%s", LOGIN, PASSWORD, SELENOID_URL);
 
     public static URL getLocalstackUrl() {
         try {
-            return new URL(remoteURL);
+            return new URL(REMOTE_URL);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -40,13 +40,13 @@ public class SelenoidMobileDriver implements WebDriverProvider {
 
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
-        desiredCapabilities.setCapability("platformName", platformName);
-        desiredCapabilities.setCapability("deviceName", deviceName);
-        desiredCapabilities.setCapability("version", Version);
-        desiredCapabilities.setCapability("locale", locale);
-        desiredCapabilities.setCapability("language", language);
-        desiredCapabilities.setCapability("appPackage", appPackage);
-        desiredCapabilities.setCapability("appActivity", appActivity);
+        desiredCapabilities.setCapability("platformName", PLATFORM_NAME);
+        desiredCapabilities.setCapability("deviceName", DEVICE_NAME);
+        desiredCapabilities.setCapability("version", VERSION);
+        desiredCapabilities.setCapability("locale", LOCALE);
+        desiredCapabilities.setCapability("language", LANGUAGE);
+        desiredCapabilities.setCapability("appPackage", APP_PACKAGE);
+        desiredCapabilities.setCapability("appActivity", APP_ACTIVITY);
         desiredCapabilities.setCapability("app", apkUrl());
 
         desiredCapabilities.setCapability("enableVNC", true);
@@ -57,7 +57,7 @@ public class SelenoidMobileDriver implements WebDriverProvider {
 
     private URL apkUrl() {
         try {
-            return new URL(appURL);
+            return new URL(APP_URL);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
