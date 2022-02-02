@@ -8,10 +8,10 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.nio.charset.StandardCharsets;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static com.github.zlwqa.helpers.RunHelper.runHelper;
 
 public class Attach {
 
-    public static String deviceHost = System.getProperty("deviceHost");
 
     @Attachment(value = "{attachName}", type = "text/plain")
     public static String attachAsText(String attachName, String message) {
@@ -36,9 +36,9 @@ public class Attach {
     }
 
     private static Object getVideoUrl(String sessionId) {
-        if (deviceHost.equals("browserstack")) {
+        if (runHelper().getDriverClass().getName().equals("browserstack")) {
             return BrowserstackVideoUrl.getVideoUrl(sessionId);
-        } else if (deviceHost.equals("selenoid")) {
+        } else if (runHelper().getDriverClass().getName().equals("selenoid")) {
             return SelenoidVideoUrl.getVideoUrl(sessionId);
         }
         return null;

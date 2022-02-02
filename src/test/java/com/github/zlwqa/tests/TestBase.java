@@ -8,6 +8,7 @@ import com.github.zlwqa.drivers.LocalMobileDriver;
 import com.github.zlwqa.drivers.RealDeviceMobileDriver;
 import com.github.zlwqa.drivers.SelenoidMobileDriver;
 import com.github.zlwqa.helpers.Attach;
+import com.github.zlwqa.helpers.RunHelper;
 import com.github.zlwqa.page.GettingStartedPage;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -15,18 +16,18 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
 import static com.github.zlwqa.helpers.Attach.getSessionId;
+import static com.github.zlwqa.helpers.RunHelper.runHelper;
 import static io.qameta.allure.Allure.step;
 
 public class TestBase {
 
     GettingStartedPage gettingStartedPage = new GettingStartedPage();
-    public static String deviceHost = System.getProperty("deviceHost");
 
     @BeforeAll
     public static void setup() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-        switch (deviceHost) {
+/*        switch (deviceHost) {
             case "browserstack":
                 Configuration.browser = BrowserstackMobileDriver.class.getName();
                 break;
@@ -40,10 +41,10 @@ public class TestBase {
                 Configuration.browser = RealDeviceMobileDriver.class.getName();
                 break;
             default:
-                System.out.println("Необходимо запустить со следующим параметром " +
+                throw new RuntimeException("Необходимо запустить со следующим параметром " +
                         "-DdeviceHost=browserstack/selenoid/local/real");
-        }
-
+        }*/
+        Configuration.browser = runHelper().getDriverClass().getName();
         Configuration.startMaximized = false;
         Configuration.browserSize = null;
         Configuration.timeout = 10000;
@@ -61,7 +62,8 @@ public class TestBase {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
 
-        if (deviceHost.equals("selenoid") || deviceHost.equals("browserstack")) {
+        if (runHelper().getDriverClass().getName().equals("selenoid") ||
+                runHelper().getDriverClass().getName().equals("browserstack")) {
             String sessionId = getSessionId();
             Attach.attachVideo(sessionId);
         }

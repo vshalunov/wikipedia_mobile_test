@@ -9,12 +9,12 @@ public class BrowserstackVideoUrl {
 
     private static final BrowserstackConfig BROWSERSTACK_CONFIG = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
 
-    private static final String userName = BROWSERSTACK_CONFIG.userName();
-    private static final String accessKey = BROWSERSTACK_CONFIG.accessKey();
+    private static final String USER_NAME = BROWSERSTACK_CONFIG.userName();
+    private static final String ACCESS_KEY = BROWSERSTACK_CONFIG.accessKey();
 
     public static String getVideoUrl(String sessionId) {
         return given()
-                .auth().basic(userName, accessKey)
+                .auth().basic(USER_NAME, ACCESS_KEY)
                 .when()
                 .get("https://api-cloud.browserstack.com/app-automate/sessions/" + sessionId + ".json")
                 .then()
