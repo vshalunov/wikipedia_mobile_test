@@ -17,10 +17,6 @@ public class RunHelper {
     }
 
     public Class<?> getDriverClass() {
-        if (deviceHost == null) {
-            throw new RuntimeException("Необходимо ввести обязательный параметр -DdeviceHost");
-        }
-
         switch (deviceHost) {
             case "browserstack":
                 return BrowserstackMobileDriver.class;

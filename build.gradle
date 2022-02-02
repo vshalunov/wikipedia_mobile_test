@@ -58,28 +58,28 @@ tasks.withType(Test) {
 }
 
 task browserstack(type: Test) {
-    systemProperty("deviceHost", "browserstack")
+    systemProperty("deviceHost", System.getProperty("deviceHost","browserstack"))
     useJUnitPlatform {
         includeTags 'browserstack'
     }
 }
 
 task local(type: Test) {
-    //systemProperty("deviceHost", "local")
+    systemProperty("deviceHost", System.getProperty("deviceHost","local"))
     useJUnitPlatform {
         includeTags 'local'
     }
 }
 
 task real(type: Test) {
-    systemProperty("deviceHost", "real")
+    systemProperty("deviceHost", System.getProperty("deviceHost","real"))
     useJUnitPlatform {
         includeTags 'real'
     }
 }
 
 task selenoid(type: Test) {
-    systemProperty("deviceHost", "selenoid")
+    systemProperty("deviceHost", System.getProperty("deviceHost","selenoid"))
     useJUnitPlatform {
         includeTags 'selenoid'
     }
