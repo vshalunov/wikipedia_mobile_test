@@ -1,4 +1,4 @@
-# Проект по автоматизации тестирования UI для [Wikipedia](https://ru.wikipedia.org/wiki/)
+# Проект по автоматизации тестирования UI для [Wikipedia](https://en.wikipedia.org/wiki/)
 
 ## <img width="4%" title="Functional" src="images/logo/functional.png"> Покрытый функционал
 

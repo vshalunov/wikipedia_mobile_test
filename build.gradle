@@ -27,6 +27,7 @@ allure {
 }
 
 dependencies {
+    implementation 'io.qameta.allure:allure-java-commons:2.16.1'
     //noinspection GradlePackageUpdate
     testImplementation(
             "com.codeborne:selenide:5.25.0",
