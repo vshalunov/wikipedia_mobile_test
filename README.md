@@ -249,7 +249,7 @@ allure serve build/allure-results
 
 </details>
 
-## <img width="4%" title="Jira" src="images/logo/Jira.svg"> Интеграция тестов c таск-трекер системой [Jira](https://jira.autotests.cloud/browse/HOMEWORK-326)
+## <img width="4%" title="Jira" src="images/logo/Jira.svg"> Интеграция тестов c таск-трекер системой [Jira](https://jira.autotests.cloud/browse/HOMEWORK-330)
 
 <details>
 <summary>Подробнее</summary>
