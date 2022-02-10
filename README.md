@@ -10,19 +10,21 @@
 ## <img width="4%" title="Technologies" src="images/logo/technologies.png"> Технологический стек
 
 <p align="center">
-<img width="6%" title="IntelliJ IDEA" src="images/logo/Intelij_IDEA.svg">
-<img width="6%" title="Java" src="images/logo/Java.svg">
-<img width="6%" title="Selenide" src="images/logo/Selenide.svg">
-<img width="6%" title="Selenoid" src="images/logo/Selenoid.svg">
-<img width="6%" title="Allure Report" src="images/logo/Allure_Report.svg">
-<img width="6%" title="Gradle" src="images/logo/Gradle.svg">
-<img width="6%" title="JUnit5" src="images/logo/JUnit5.svg">
-<img width="6%" title="GitHub" src="images/logo/GitHub.svg">
-<img width="6%" title="Jenkins" src="images/logo/Jenkins.svg">
-<img width="6%" title="Allure TestOps" src="images/logo/Allure_TestOps.svg">
-<img width="6%" title="Rest Assured" src="images/logo/Rest-Assured.svg">
-<img width="6%" title="BrowserStack" src="images/logo/Browserstack.svg">
-<img width="6%" title="Appium" src="images/logo/Appium.svg">
+<img width="5%" title="IntelliJ IDEA" src="images/logo/Intelij_IDEA.svg">
+<img width="5%" title="Java" src="images/logo/Java.svg">
+<img width="5%" title="Selenide" src="images/logo/Selenide.svg">
+<img width="5%" title="Selenoid" src="images/logo/Selenoid.svg">
+<img width="5%" title="Allure Report" src="images/logo/Allure_Report.svg">
+<img width="5%" title="Gradle" src="images/logo/Gradle.svg">
+<img width="5%" title="JUnit5" src="images/logo/JUnit5.svg">
+<img width="5%" title="GitHub" src="images/logo/GitHub.svg">
+<img width="5%" title="Jenkins" src="images/logo/Jenkins.svg">
+<img width="5%" title="Allure TestOps" src="images/logo/Allure_TestOps.svg">
+<img width="5%" title="Rest Assured" src="images/logo/Rest-Assured.svg">
+<img width="5%" title="BrowserStack" src="images/logo/Browserstack.svg">
+<img width="5%" title="Appium" src="images/logo/Appium.svg">
+<img width="5%" title="Telegram" src="images/logo/Telegram.svg">
+<img width="5%" title="Jira" src="images/logo/Jira.svg">
 </p>
 
 > В данном проекте автотесты написаны на <code>Java</code> с использованием фреймворка <code>Selenide</code> и <code>Appium</code> для UI проверок, и библиотеки <code>REST Assured</code> для отображения видео в отчете
@@ -39,7 +41,9 @@
 >
 > <code>Allure Report</code> формирует отчет о запуске тестов
 >
-> Автотесты интегрируются с тест-менеджмент системой <code>Allure TestOps</code>
+> Автотесты интегрируются с тест-менеджмент системой <code>Allure TestOps</code> и таск-трекер системой <code>Jira</code>
+> 
+> В <code>Telegram</code> отправляются уведомления о пройденном прогоне
 
 ## <img width="4%" title="Jira" src="images/logo/ITerm2_v3_icon.png"> Запуск тестов из терминала
 
@@ -207,6 +211,24 @@ allure serve build/allure-results
 <img title="Allure Overview Dashboard" src="images/screens/allure_overview_dashboard.png">
 </p>
 
+### :test_tube:     Дашборд для отображения успешности и длительности тестов
+
+<p align="center">
+<img title="Allure Overview Dashboard" src="images/screens/allure_duration_and_success_rate_dashboard.png">
+</p>
+
+### :test_tube:     Дашборд по стендам
+
+<p align="center">
+<img title="Allure Overview Dashboard" src="images/screens/allure_stands_dashboard.png">
+</p>
+
+### :test_tube:     Дашборд по членам команды
+
+<p align="center">
+<img title="Allure Overview Dashboard" src="images/screens/allure_team_dashboard.png">
+</p>
+
 ### :test_tube:     Запуски тестов
 
 <p align="center">
@@ -226,6 +248,34 @@ allure serve build/allure-results
 </p>
 
 </details>
+
+## <img width="4%" title="Jira" src="images/logo/Jira.svg"> Интеграция тестов c таск-трекер системой [Jira](https://jira.autotests.cloud/browse/HOMEWORK-326)
+
+<details>
+<summary>Подробнее</summary>
+
+> Интеграция с <code>Jira</code> позволяет добавлять в задачи тест-кейсы, запуски и их результаты.
+
+<p align="center">
+<img title="Jira Issues" src="images/screens/jira_issues.png">
+</p>
+
+</details>
+
+## <img width="4%" title="Telegram" src="images/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
+
+<details>
+<summary>Подробнее</summary>
+
+> Реализована отправка уведомлений о прогоне с помощью бота в <code>Telegram</code>.
+> Фреймворк также поддерживает уведомления по _электронной почте, Slack, Skype_ и _Mattermost_.
+
+<p align="center">
+<img title="Telegram Notifications" src="images/screens/telegram_notifications.png">
+</p>
+
+</details>
+
 
 ## <img width="4%" title="Browserstack" src="images/logo/Browserstack.svg"> Пример запуска теста в Browserstack
 
