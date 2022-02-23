@@ -29,7 +29,7 @@ public class TestBase {
 
     @BeforeEach
     public void startDriver() {
-        step("Открыть браузер", () ->
+        step("Открыть приложение", () ->
                 Selenide.open());
     }
 
