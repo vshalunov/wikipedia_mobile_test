@@ -36,7 +36,7 @@ public class Attach {
 
     private static Object getVideoUrl(String sessionId) {
         if (deviceHost.equals("browserstack")) {
-            return BrowserstackVideoUrl.getVideoUrl(sessionId);
+            return Browserstack.getVideoUrl(sessionId);
         } else if (deviceHost.equals("selenoid")) {
             return SelenoidVideoUrl.getVideoUrl(sessionId);
         }

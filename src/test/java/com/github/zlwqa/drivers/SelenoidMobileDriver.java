@@ -37,7 +37,6 @@ public class SelenoidMobileDriver implements WebDriverProvider {
         }
     }
 
-
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
         desiredCapabilities.setCapability("platformName", PLATFORM_NAME);
@@ -63,5 +62,4 @@ public class SelenoidMobileDriver implements WebDriverProvider {
         }
         return null;
     }
-
 }

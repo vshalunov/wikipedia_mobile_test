@@ -29,9 +29,8 @@ public class TestBase {
 
     @BeforeEach
     public void startDriver() {
-        step("Открыть браузер", () -> {
-            Selenide.open();
-        });
+        step("Открыть браузер", () ->
+                Selenide.open());
     }
 
     @AfterEach

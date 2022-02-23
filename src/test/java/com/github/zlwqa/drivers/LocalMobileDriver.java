@@ -34,7 +34,6 @@ public class LocalMobileDriver implements WebDriverProvider {
         }
     }
 
-
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
         desiredCapabilities.setCapability("platformName", PLATFORM_NAME);
@@ -48,5 +47,4 @@ public class LocalMobileDriver implements WebDriverProvider {
 
         return new AndroidDriver(getLocalstackUrl(), desiredCapabilities);
     }
-
 }

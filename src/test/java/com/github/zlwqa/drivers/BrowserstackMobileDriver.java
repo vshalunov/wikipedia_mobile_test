@@ -29,7 +29,6 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         }
     }
 
-
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
         // Set your access credentials
@@ -53,5 +52,4 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         // and desired capabilities defined above
         return new AndroidDriver(getBrowserstackUrl(), desiredCapabilities);
     }
-
 }

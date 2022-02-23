@@ -26,7 +26,6 @@ public class RealDeviceTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @Link(name = "Wikipedia", url = "https://en.wikipedia.org/")
     void checkingTheFirstFourScreensOfGettingStarted() {
-
         // First Screen
         gettingStartedPage.titleDisplayOnFirstScreen()
                 .clickForwardButton();

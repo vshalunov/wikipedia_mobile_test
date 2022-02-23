@@ -5,7 +5,7 @@ import org.aeonbits.owner.ConfigFactory;
 
 import static io.restassured.RestAssured.given;
 
-public class BrowserstackVideoUrl {
+public class Browserstack {
 
     private static final BrowserstackConfig BROWSERSTACK_CONFIG = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
 

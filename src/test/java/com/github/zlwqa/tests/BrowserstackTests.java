@@ -35,18 +35,14 @@ public class BrowserstackTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @Link(name = "Wikipedia", url = "https://en.wikipedia.org/")
     void searchTest() {
+        step("Открыть строку поиска", () ->
+                $(MobileBy.AccessibilityId("Search Wikipedia")).click());
 
-        step("Открыть строку поиска", () -> {
-            $(MobileBy.AccessibilityId("Search Wikipedia")).click();
-        });
+        step("Ввести поисковое значение", () ->
+                $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("BrowserStack"));
 
-        step("Ввести поисковое значение", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("BrowserStack");
-        });
-
-        step("Отображение результатов поиска", () -> {
-            $$(byClassName("android.widget.TextView")).shouldHave(sizeGreaterThan(0));
-        });
+        step("Отображение результатов поиска", () ->
+                $$(byClassName("android.widget.TextView")).shouldHave(sizeGreaterThan(0)));
     }
 
     @Test
@@ -60,21 +56,16 @@ public class BrowserstackTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @Link(name = "Wikipedia", url = "https://en.wikipedia.org/")
     void searchPageNavalnyTest() {
+        step("Открыть строку поиска", () ->
+                $(MobileBy.AccessibilityId("Search Wikipedia")).click());
 
-        step("Открыть строку поиска", () -> {
-            $(MobileBy.AccessibilityId("Search Wikipedia")).click();
-        });
+        step("Ввести поисковое значение Navalny", () ->
+                $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Navalny"));
 
-        step("Ввести поисковое значение Navalny", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Navalny");
-        });
+        step("Нажать на результат поиска с заголовком 'Alexei Navalny'", () ->
+                $$(byClassName("android.widget.TextView")).find(text("Alexei Navalny")).click());
 
-        step("Нажать на результат поиска с заголовком 'Alexei Navalny'", () -> {
-            $$(byClassName("android.widget.TextView")).find(text("Alexei Navalny")).click();
-        });
-
-        step("Отображение страницы про Алексея Навального ", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/view_page_title_text")).shouldHave(text("Alexei Navalny"));
-        });
+        step("Отображение страницы про Алексея Навального ", () ->
+                $(MobileBy.id("org.wikipedia.alpha:id/view_page_title_text")).shouldHave(text("Alexei Navalny")));
     }
 }
